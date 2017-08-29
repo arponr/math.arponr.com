@@ -1,0 +1,12 @@
+div.page__section
+    h2 #{title}
+    ul.entrylist
+        for e in entries
+            li
+                a.entrylist__title(href=e.url) #{e.title}
+                div.entrylist__meta
+                    div.entrylist__desc
+                        p #{e.desc}
+                    div.entrylist__time #{e.date}
+
+

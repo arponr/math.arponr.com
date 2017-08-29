@@ -1,0 +1,173 @@
+h1 {
+  font-size: $size-large;
+}
+
+.page {
+  padding-bottom: $hugeskip;
+
+  h2 {
+    font-style: italic;
+    margin-bottom: $medskip;
+  }
+
+  h3 {
+    font-style: italic;
+    margin-bottom: $tinyskip;
+  }
+  
+  &__header {
+    margin-bottom: $hugeskip;
+    
+    a {
+      @extend %plain;
+    }
+  }
+  
+  &__meta {
+    @extend %meta;
+  }
+  
+  &__time {
+    display: block;
+    @extend %meta;
+    @extend %small;
+  }
+  
+  &__section {
+    & + & {
+      margin-top: $hugeskip;
+    }
+  }
+  
+  * + h2,
+  hr {
+    margin-top: $bigskip;
+  }
+
+  * + h3 {
+    margin-top: $medskip;
+  }
+  
+  blockquote {
+    & + :not(h2):not(h3) {
+      margin-top: $smallskip;
+    }
+  }
+
+  figure {
+    & + :not(h2):not(h3) {
+      margin-top: $bigskip;
+    }
+  }
+
+  ul,
+  ol {
+    & + :not(h2):not(h3)  {
+      margin-top: $tinyskip;
+    }
+  }
+
+  p + blockquote {
+    margin-top: $smallskip;
+  }
+  
+  p + figure {
+    margin-top: $bigskip;
+  }
+
+  p + ul,
+  p + ol {
+    margin-top: $tinyskip;
+  }
+
+  p + p {
+    margin-top: $smallskip;
+  }
+
+  li {
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  figure {
+    &, img {
+      width: 100%;
+    }
+
+    figcaption {
+      width: 75%;
+      margin-left: 25%;
+      text-align: right;
+      @extend %small;
+      @extend %meta;
+    }
+  }
+
+  blockquote {
+    padding-left: 1.5rem;
+    margin-left: 2px;
+    border-left: 2px solid $background-accent;
+  }
+}
+
+.text {
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul, ol {
+    margin-left: 2.0rem;
+
+    li + li {
+      margin-top: $tinyskip;
+
+      ul {
+        list-style-type: circle;
+      }
+
+      ol {
+        list-style-type: lower-roman;
+      }
+
+      ul, ol {
+        li {
+          margin-bottom: 0.1rem;
+        }
+      }
+    }
+  }
+}
+
+.ref, .footnote {
+  @extend %meta;
+  @extend %plain;
+}
+
+.footnote {
+  padding: .2em;
+}
+
+.footnotes {
+  &:before {
+    content: '';
+    display: block;
+    background: $background-accent;
+    height: 1px;
+    width: 25%;
+    margin-top: $medskip;
+    margin-bottom: $smallskip;
+  }
+
+  ol {
+    list-style-type: decimal;
+    font-size: $size-small;
+    line-height: $line-height-small;
+    margin-left: 0rem;
+  }
+}

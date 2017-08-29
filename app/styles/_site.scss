@@ -1,0 +1,22 @@
+%wrap {
+  margin: 0 auto;
+  max-width: $site-width;
+  padding: 2.0rem;
+  position: relative;
+}
+
+.site {
+  @extend %wrap;
+
+  &__header {
+    margin-bottom: $medskip;
+  }
+
+  .nav__name {
+    font-weight: bold;
+  }
+  
+  .nav__sec {
+    @extend %meta;
+  }
+}

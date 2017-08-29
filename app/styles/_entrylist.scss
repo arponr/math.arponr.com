@@ -1,0 +1,43 @@
+.entrylist {
+  &, & ul {
+    margin-left: 0 !important;
+  }
+  
+  li {
+    position: relative;
+    list-style: none;
+  }
+
+  li + li {
+    margin-top: $smallskip;
+  }
+
+  &__title {
+    display: block;
+  }
+
+  &__meta {
+    margin-top: $nanoskip;
+    display: table;
+    @extend %small;
+    @extend %meta;
+  }
+
+  &__title, &__time {
+    display: table-cell;
+  }
+  
+  &__time {
+    @extend %small;
+    @extend %meta;
+  }
+
+  &__title {
+    width: 100%;
+  }
+
+  &__time {
+    white-space: nowrap;
+    padding-left: 3.0rem;
+  }
+}
